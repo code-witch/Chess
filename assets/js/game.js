@@ -1,4 +1,16 @@
-(function () {
+const start = is960Game => {
+let order = [3,6,5,4,2,7,1,8];
+    if (is960Game) {
+        for(let i= 0; i < 10; i++) {
+            order.sort(() => (Math.floor(Math.random() * 100) - 50));
+        }
+    } else {
+        order = [3,6,5,4,2,7,1,8]
+    }
+
+
+
+
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
 
@@ -17,52 +29,52 @@
             blackPos: [],
             white: [{
                 img: 'wb.png',
-                x: [3, 6],
+                x: [order[0], order[1]],
                 y: 0
             },
             {
                 img: 'wk.png',
-                x: 5,
+                x: order[2],
                 y: 0
             },
             {
                 img: 'wq.png',
-                x: 4,
+                x: order[3],
                 y: 0
             },
             {
                 img: 'wn.png',
-                x: [2, 7],
+                x: [order[4], order[5]],
                 y: 0
             },
             {
                 img: 'wr.png',
-                x: [1, 8],
+                x: [order[6], order[7]],
                 y: 0
             }],
             black: [{
                 img: 'bb.png',
-                x: [3, 6],
+                x: [order[0],order[1]],
                 y: 0
             },
             {
                 img: 'bk.png',
-                x: 5,
+                x: order[2],
                 y: 0
             },
             {
                 img: 'bq.png',
-                x: 4,
+                x: order[3],
                 y: 0
             },
             {
                 img: 'bn.png',
-                x: [2, 7],
+                x: [order[4],order[5]],
                 y: 0
             },
             {
                 img: 'br.png',
-                x: [1, 8],
+                x: [order[6], order[7]],
                 y: 0
             }]
 
@@ -1164,4 +1176,4 @@
     }
 
     var a = new chessGame();
-})();
+};
