@@ -5,13 +5,33 @@
 
         <style>
             body {
-                margin: 0;
+                margin: 30px;
+                text-align: center;
+                background: #333;
             }
+            a {
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 0;
+                padding: 0;
+                font-size: 18pt;
+                border-style: none;
+                background: #222;
+                color: #ccc;
+                padding: 20px;
+                margin: 5px;
+                transition: background-color ease-in-out 0.4s;
+            }
+
+            a:hover {
+                background-color: #444;
+                cursor: pointer;
+            }
+
         </style>
     </head>
     <body>
-        <canvas id="game"></canvas>
-
-        <script src="assets/js/game.js"></script>
+        <a href="./normalGame.html">Normal Game</a>
+        <a href="./960Game.html">960 Game</a>
     </body>
 </html>
