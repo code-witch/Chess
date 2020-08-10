@@ -1,5 +1,6 @@
 const start = is960Game => {
-let order = [3,6,5,4,2,7,1,8];
+
+    let order = [3,6,5,4,2,7,1,8];
     if (is960Game) {
         for(let i= 0; i < 10; i++) {
             order.sort(() => (Math.floor(Math.random() * 100) - 50));
@@ -7,9 +8,6 @@ let order = [3,6,5,4,2,7,1,8];
     } else {
         order = [3,6,5,4,2,7,1,8]
     }
-
-
-
 
     var canvas = document.getElementById('game');
     var ctx = canvas.getContext('2d');
@@ -1176,4 +1174,40 @@ let order = [3,6,5,4,2,7,1,8];
     }
 
     var a = new chessGame();
+    
+    // "Unit Tests"
+
+    if (is960Game){
+        console.log('order is shuffled:  ', order !== [3,6,5,4,2,7,1,8]);
+        console.log('normal game order: ', [3,6,5,4,2,7,1,8], 'new order: ', order);
+        
+        
+    } else {
+        console.log('black bishop in correct place: ', a.gameData.black[0].img === 'bb.png' && a.gameData.black[0].x[0] === 3);
+        console.log('black bishop in correct place: ', a.gameData.black[0].img === 'bb.png' && a.gameData.black[0].x[1] === 6);
+    
+        console.log('black knight in correct place: ', a.gameData.black[3].img === 'bn.png' && a.gameData.black[3].x[0] === 2);
+        console.log('black knight in correct place: ', a.gameData.black[3].img === 'bn.png' && a.gameData.black[3].x[1] === 7);
+    
+        console.log('black king in correct place: ', a.gameData.black[1].img === 'bk.png' && a.gameData.black[1].x === 5);
+        console.log('black queen in correct place: ', a.gameData.black[2].img === 'bq.png' && a.gameData.black[2].x === 4);
+    
+        console.log('black rook in correct place: ', a.gameData.black[4].img === 'br.png' && a.gameData.black[4].x[0] === 1);
+        console.log('black rook in correct place: ', a.gameData.black[4].img === 'br.png' && a.gameData.black[4].x[1] === 8);
+    
+    
+        console.log('white bishop in correct place: ', a.gameData.white[0].img === 'wb.png' && a.gameData.white[0].x[0] === 3);
+        console.log('white bishop in correct place: ', a.gameData.white[0].img === 'wb.png' && a.gameData.white[0].x[1] === 6);
+    
+        console.log('white knight in correct place: ', a.gameData.white[3].img === 'wn.png' && a.gameData.white[3].x[0] === 2);
+        console.log('white knight in correct place: ', a.gameData.white[3].img === 'wn.png' && a.gameData.white[3].x[1] === 7);
+    
+        console.log('white king in correct place: ', a.gameData.white[1].img === 'wk.png' && a.gameData.white[1].x === 5);
+        console.log('white queen in correct place: ', a.gameData.white[2].img === 'wq.png' && a.gameData.white[2].x === 4);
+    
+        console.log('white rook in correct place: ', a.gameData.white[4].img === 'wr.png' && a.gameData.white[4].x[0] === 1);
+        console.log('white rook in correct place: ', a.gameData.white[4].img === 'wr.png' && a.gameData.white[4].x[1] === 8);
+    }
+
+
 };
